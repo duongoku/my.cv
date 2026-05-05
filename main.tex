@@ -70,12 +70,39 @@
   }
 }
 
+\newcommand{\resumeSubheadingSingle}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingTriple}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small #3 & \\
+      \textit{\small#4} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingQuad}[9]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small #3 & \\
+      \textit{\small#4} & \textit{\small #5} \\
+      \textit{\small#6} & \textit{\small #7} \\
+      \textit{\small#8} & \textit{\small #9} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -88,13 +115,16 @@
 }
 
 
-\newcommand{\resumeEducationHeading}[6]{
+\newcommand{\resumeEducationHeading}[8]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-      \textit{\small#5} & \textit{\small #6} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-7pt}
+    \resumeItemListStart
+      \resumeItem{#5}
+      \resumeItem{#7}
+    \resumeItemListEnd
 }
 
 
@@ -119,7 +149,7 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-15pt}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
@@ -132,253 +162,317 @@
 %---------- HEADING ----------
 
 \begin{center}
-    \textbf{\Huge \scshape Aras Güngöre} \\ \vspace{3pt}
-    \small
-    \faMobile \hspace{.5pt} \href{tel:905314204536}{+90 531 420 4536}
-    $|$
-    \faAt \hspace{.5pt} \href{mailto:arasgungore09@gmail.com}{arasgungore09@gmail.com}
-    $|$
-    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/arasgungore}{LinkedIn}
-    $|$
-    \faGithub \hspace{.5pt} \href{https://github.com/arasgungore}{GitHub}
-    $|$
-    \faGlobe \hspace{.5pt} \href{https://arasgungore.github.io}{Portfolio}
-    $|$
-    \faMapMarker \hspace{.5pt} \href{https://www.google.com/maps/place/Bogazici+University+North+Campus/@41.0863067,29.0441352,15z/data=!4m5!3m4!1s0x0:0x9d2497b07c8edb2f!8m2!3d41.0863067!4d29.0441352}{Istanbul, Turkey}
+  {\Huge \scshape \textbf{Nguyen Vu Binh Duong}} \\ \vspace{3pt}
+  \small
+  \faMobile \hspace{.5pt} \href{tel:84966997401}{+84 966 997 401}
+  $|$
+  \faAt \hspace{.5pt} \href{mailto:nguyenvubinhduong@gmail.com}{nguyenvubinhduong@gmail.com}
+  $|$
+  \faMapMarker \hspace{.5pt} Hanoi, Vietnam
+  \\ \vspace{2pt}
+  \faLinkedinSquare \hspace{.5pt} \href{https://linkedin.com/in/duongoku}{linkedin.com/in/duongoku}
+  $|$
+  \faGithub \hspace{.5pt} \href{https://github.com/duongoku}{github.com/duongoku}
+  $|$
+  \faGlobe \hspace{.5pt} \href{https://orcid.org/0009-0001-2572-6516}{orcid.org/0009-0001-2572-6516}
+  % \\ \vspace{4pt}
+  % \textit{I am interested in applying machine learning and AI to health sciences. My current research focuses on neuroimaging-based diagnosis of Alzheimer's disease, with an emphasis on building explainable and clinically interpretable models.}
 \end{center}
-
-
 
 %----------- EDUCATION -----------
 
 \section{Education}
-  \vspace{3pt}
-  \resumeSubHeadingListStart
-    
-    \resumeEducationHeading
-      {Boğaziçi University
-      % \normalfont{(Admission rate: 0.09\%)}
-      }{Istanbul, Turkey}
-      {B.Sc. in Electrical and Electronics Engineering;   \textbf{GPA: 3.62/4.00}}{Sep 2018 \textbf{--} Jun 2023}
-      {Minor Degree in Computer Science;
-      \textbf{GPA: 3.58/4.00}}{Oct 2020 \textbf{--} Jun 2023}
-        \resumeSubHeadingListStart
-        \small{\item{
-            % \textbf{Relevant coursework:} Materials Science, Electrical Circuits I-II, Digital System Design, Numerical Methods, Probability Theory, Electronics I-II, Signals and Systems, Electromagnetic Field Theory, Energy Conversion, System Dynamics and Control, Communication Engineering, Pattern Recognition, Introduction to Digital Signal Processing, Introduction to Digital Communications, Introduction to Database Systems, Introduction to Image Processing, Machine Vision
-            \textbf{National University Admission Exam (YKS):} Ranked $75^{th}$ in Mathematics and Science among ca. 2.3 million candidates with a test score of 489.92/500. (Jul 2018)}}
-        \resumeSubHeadingListEnd
-    
-    % \resumeSubheading
-      % {Kocaeli Science High School
-      % \normalfont{(Admission rate: 0.85\%)}
-      % }{Kocaeli, Turkey}
-      % {High School Diploma;   \textbf{GPA: 97.03/100}}{Sep 2014 \textbf{--} Jun 2018}
-    
-  \resumeSubHeadingListEnd
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textbf{{\parbox{0.75\textwidth}{University of Engineering and Technology, Vietnam National University (VNU-UET)}}} & {Hanoi, Vietnam} \\
+  \textit{\small{M.Sc. in Software Engineering}} & \textit{\small {Dec 2023 \textbf{--} June 2025}} \\
+\end{tabular*}\vspace{-7pt}
+\resumeItemListStart
+\resumeItem{\textbf{GPA}: 3.87/4.00}
+\resumeItem{\parbox[t]{0.8\textwidth}{\textbf{Master's Thesis}: AI-based Software System for Early Diagnosis and Detection of Alzheimer's Disease in Vietnamese People}}
+\resumeItemListEnd
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textit{\small{B.Sc. in Computer Science (Honors Program)}} & \textit{\small{Sep 2019 \textbf{--} June 2023}} \\
+\end{tabular*}\vspace{-7pt}
+\resumeItemListStart
+\resumeItem{\textbf{GPA}: 3.60/4.00}
+\resumeItem{\textbf{Grade}: High Distinction}
+\resumeItem{\parbox[t]{0.8\textwidth}{\textbf{Bachelor's Thesis}: Improving the Performance of Unit Test Case Execution for C/C++ Projects}}
+\resumeItemListEnd
+
+% \resumeEducationHeading
+% {\parbox{0.75\textwidth}{University of Engineering and Technology, Vietnam National University (VNU-UET)}}{Hanoi, Vietnam}
+% {M.Sc. in Software Engineering}{2023 \textbf{--} 2025}
+% {\textbf{GPA}: 3.87/4.00}{}
+% {\parbox{0.8\textwidth}{\textbf{Master's Thesis}: AI-based Software System for Early Diagnosis and Detection of Alzheimer's Disease in Vietnamese People}}{}
+
+% \resumeEducationHeading
+% {University of Engineering and Technology, Vietnam National University}{Hanoi, Vietnam}
+% {B.Sc. in Computer Science}{2019 \textbf{--} 2023}
+% {\textbf{GPA}: 3.60/4.00}{}
+% {\parbox{0.8\textwidth}{\textbf{Bachelor's Thesis}: Improving the Performance of Unit Test Case Execution for C/C++ Projects}}{}
 
 
+\resumeSubHeadingListEnd
 
-%----------- SKILLS -----------
+%----------- RESEARCH EXPERIENCE -----------
 
-\section{Skills}
-  \vspace{2pt}
-  \resumeSubHeadingListStart
-    \small{\item{
-        
-        \textbf{Languages:}{ C/C++, C\#, Java, Python, Go, JavaScript, TypeScript, SQL, Swift, Scala, MATLAB, R} \\ \vspace{3pt}
-        
-        \textbf{Technologies:}{ Qt, Flask, Django, Node.js, React.js, MySQL, MongoDB, Git, SVN, Docker, AWS, Kubernetes, GCP, Kafka, RabbitMQ, OpenCV, PyTorch, TensorFlow} \\ \vspace{3pt}
-        
-        \textbf{Methodologies:}{ Agile, Scrum, OOP, Functional Programming, DevOps, CI/CD, TDD} \\ \vspace{3pt}
-        
-    }}
-  \resumeSubHeadingListEnd
+\section{Research Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
 
+\resumeSubheadingTriple
+{International University, Vietnam National University Ho Chi Minh City}{HCMC, Vietnam}
+{Brain Health Lab, School of Biomedical Engineering}
+{Researcher}{Jan 2024 \textbf{--} Present}
+\vspace{0.01em}
 
+% \resumeItemListStart
+% \resumeItem
+\small
+Alzheimer's Biomarker Cross-border Development (ABCD) Project, Vietnamese-Swiss Joint Research Programme\\Supervisor: Assoc. Prof. Huong Ha
+\vspace{-0.75em}
+\begin{itemize}
+  \item Built an ML framework (predictor + explainer modules) for AD
+        classification across \textbf{113 Vietnamese subjects}, achieving \textbf{81.4\%
+          accuracy} with XGBoost and \textbf{78.8\% accuracy / 87.2\% AUC} with the
+        Generalized Additive Model.
+        % \item Developed a modular machine learning framework, comprising predictor and explainer modules, for Alzheimer's disease (AD) classification using structural MRI data from a Vietnamese cohort (N=113).
+        % \item Demonstrated that the black-box XGBoost model yielded the maximum classification accuracy (81.4\%) relative to other models evaluated on the Vietnamese dataset.
+        % \item Identified the Generalized Additive Model as the most interpretable and robust approach (78.8\% accuracy, 87.2\% AUC) for the Vietnamese cohort, balancing performance with clinical explainability.
+        % \item Validated the hippocampus as a consistent and highly important brain region for AD classification across all models, aligning with established medical findings.
+        % \item Conducted a comparative analysis of structural features between the Vietnamese cohort (N=76, from April 30th Hospital) and the ADNI cohort (N=80).
+  \item Compared brain atrophy structural features across \textbf{2 cohorts}
+        (Vietnamese N=76 vs. ADNI N=80), revealing a \textbf{10--25\% accuracy drop}
+        in cross-dataset validation, underscoring the need for population-specific models.
+        % \item Showed that cross-dataset validation resulted in an approximate 10\% to 25\% drop in prediction accuracy, highlighting the need for population-specific ML models.
+\end{itemize}
+\normalsize
+% \resumeItemListEnd
 
-%----------- EXPERIENCE -----------
+\vspace{-0.75em}
 
-\section{Experience}
-  \vspace{3pt}
-  \resumeSubHeadingListStart
+\small
+Project Unveiling Heterogeneity in Early Alzheimer's Disease
+\\Supervisor: Assoc. Prof. Huong Ha
+\vspace{-0.75em}
+\begin{itemize}
+  \item Preprocessed MRI scans with FreeSurfer (104 volumetric features) and applied CIMLR clustering to identify \textbf{5 distinct subgroups} within 648 MCI/CN subjects.
+  \item Characterized clusters via statistical analysis of \textbf{demographics, cognitive scores, and brain volumes}, revealing \textbf{two mild-atrophy} clusters (enriched with CN) and \textbf{one severe-atrophy} cluster (enriched with MCI).
+\end{itemize}
+\normalsize
+% \resumeItemListEnd
 
-    \resumeSubheading
-      {Avikon}{Istanbul, Turkey}
-      {Software Engineer}{Dec 2023 \textbf{--} Present, Full-time}
-        \resumeItemListStart
-            \resumeItem{Designed a Qt-based chat application utilizing TCP for real-time communication within a client-server architecture, demonstrating expertise in socket programming, data serialization, and message routing.}
-            \resumeItem{Crafted message types in IDL and designed a data-centric publish-subscribe architecture based on a flyweight design pattern to implement OpenDDS for a radar system's command and control interface. Utilized QoS policies to facilitate the transmission of both volatile and persistent data across different topics.}
-            \resumeItem{Implemented a fully asynchronous AMQP-based C++ client with a layered architecture for RabbitMQ message broker to ensure seamless message handling among multiple topics.}
-            \resumeItem{Developed a cross-platform asynchronous program to refine UAV detection for a GIS application. Benchmarked point-in-polygon algorithms with a GeoJSON polygon database concurrently fetched from MongoDB.}
-        \resumeItemListEnd
+\vspace{-0.75em}
 
-    \resumeSubheading
-      {SemperTech}{Istanbul, Turkey}
-      {Software Engineer}{Sep 2023 \textbf{--} Nov 2023, Full-time}
-        \resumeItemListStart
-            \resumeItem{Worked on the “Arçelik Digital Home Energy” project in a collaborative effort with DAI-Labor at the Technical University of Berlin under the supervision of \href{https://www.linkedin.com/in/prof-dr-dr-h-c-sahin-albayrak-65452a1/}{\color{blue}Prof. Dr. Şahin Albayrak}.}
-            \resumeItem{Simulated discovery, pairing, and data exchange processes using the EEBUS protocol suite with C\# and Go. Migrated the framework from Go to C++ in order to ensure future adaptability for smart home IoT devices.}
-            \resumeItem{Implemented the TLS protocol for secure data exchange using the X.509 standard and integrated multicast DNS for seamless communication to complement the development of SHIP and SPINE protocols.}
-        \resumeItemListEnd
+\resumeSubheadingQuad
+{University of Engineering and Technology, Vietnam National University}{Hanoi, Vietnam}
+{Department of Software Engineering, Faculty of Information Technology}
+{Lab Instructor/Research Assistant}{Sep 2023 \textbf{--} Present}
+{Undergraduate Research Assistant}{Feb 2021 \textbf{--} June 2023}
+{}{}
+\vspace{-1.25em}
+% \resumeItemListStart
+% \resumeItem
 
-    % \resumeSubheading
-      % {Scale AI}{San Francisco, California, United States (Remote)}
-      % {Prompt Engineer}{Mar 2023 \textbf{--} Sep 2023, Freelance}
-        % \resumeItemListStart
-            % \resumeItem{Crafted elaborate Turkish prompts for various generative AI tasks. Tailored prompts using well-defined formats such as natural language questions and structured inputs based on the task's domain to fine-tune the LLM, improving the chatbot's responses and enhancing overall performance.}
-            % \resumeItem{Provided user feedback by reviewing and scoring the chatbot's responses to ensure they align with intended chatbot behaviors and the chatbot produces accurate and contextually appropriate responses to given prompts.}
-            % \resumeItem{Engaged in collaborative meetings with cross-functional teams and project coordinators, actively seeking guidance, addressing queries, and collectively brainstorming strategies to generate higher-quality prompts.}
-        % \resumeItemListEnd
+\small
+AKAUTAUTO: a proprietary software used for C/C++ unit testing with automated unit test generation. Supervisor: Assoc. Prof. Pham Ngoc Hung
+\vspace{-0.75em}
+\begin{itemize}
+  \item Directed the research group of \textbf{15 members} and facilitated weekly technical reviews with the joint development team at \textbf{FPT Software}.
+  \item Provided training and technical consultation to group members.
+  \item Implemented a pairwise test case generation algorithm and integrated it with the classification tree feature.
+        % \item Optimized source code analysis algorithm for C/C++ projects.
+        % \item Finalized symbolic execution module in the automatic test data generation method of the software.
+        % \item Implemented and improved stub functions and stub functions with multiple calls feature.
+  \item Developed a stubbing method for \textbf{built-in and external}
+        dependencies, enabling unit testing of \textbf{80\% previously untestable} modules.
+\end{itemize}
+\normalsize
+% \resumeItemListEnd
 
-    \resumeSubheading
-      {Max Planck Institute for Intelligent Systems}{Stuttgart, Baden\textbf{-}Württemberg, Germany}
-      {Undergraduate Researcher}{Jun 2022 \textbf{--} Aug 2022, Internship}
-        \resumeItemListStart
-            \resumeItem{Engaged in collaborative research within the Robotics, Collectives and Learning subgroup at the Physical Intelligence Department with Ph.D. students \href{https://www.linkedin.com/in/sinan-ozgun-demir-981311129/}{\color{blue}Sinan Özgün Demir} and \href{https://www.linkedin.com/in/alpkaracakol/}{\color{blue}Alp Can Karacakol} on a project about 3D printing and heat-assisted magnetic programming of soft machines under the supervision of \href{https://www.linkedin.com/in/metin-sitti-0a8a712/}{\color{blue}Prof. Dr. Metin Sitti}.}
-            \resumeItem{Optimized a C++ ROS package for real-time conversion of 3D motion controller events to ROS messages, achieving high-frequency and buffer-free synchronization.}
-            \resumeItem{Developed an Arduino Mega driver to activate a laser and pressure regulator, for monitoring coil temperatures and PID tuning to control the coil currents. Established a robust ROS-Arduino communication network by integrating ROSSerial and handshaking to simulate a 3D printing and magnetic programming process with Python.}
-            % \resumeItem{Designed the project's system and software architecture, flowchart, and state machine diagram. Expanded G-code capabilities by incorporating spherical coordinates to specify the direction of magnetization for shape morphing.}
-        \resumeItemListEnd
-    
-    % \resumeSubheading
-      % {Nanonetworking Research Group, Boğaziçi University}{Istanbul, Turkey}
-      % {Undergraduate Researcher}{Oct 2021 \textbf{--} Jun 2022, Part-time}
-        % \resumeItemListStart
-            % \resumeItem{Worked on the “Design and Implementation of Molecular Communication Systems Using Index Modulation” project under the supervision of \href{https://www.linkedin.com/in/alipusane/}{\color{blue}Prof. Dr. Ali Emre Pusane}.}
-            % \resumeItem{Simulated the Brownian motion of molecules in a SISO MCvD system and predicted simulation parameters such as receiver radius, diffusion coefficient, and transmitter-receiver distance using CNNs with Keras and TensorFlow.}
-            % \resumeItem{Plotted the arrival of molecules per symbol duration in a SISO MCvD system using Binomial, Poisson, and Gaussian model approximations with MATLAB.}
-            % \resumeItem{Ran Monte Carlo simulations of the Gaussian model to encode and decode randomized binary sequences in a SISO MCvD system using BCSK modulation technique and calculated the bit error rate on Z-channel.}
-        % \resumeItemListEnd
+\resumeSubHeadingListEnd
+%----------- PUBLICATIONS -----------
 
-    % \vspace{20pt}
-    \resumeSubheading
-      {SESTEK Speech Enabled Software Technologies}{Istanbul, Turkey}
-      {AI Research and Development Intern}{Jan 2022 \textbf{--} Feb 2022, Internship}
-        \resumeItemListStart
-            % \resumeItem{Executed diverse NLP tasks, including NER, POS tagging, sentiment analysis, text classification, and extractive and generative QA using transformers and Hugging Face libraries. Conducted a thorough literature review on information retrieval and reading comprehension to stay updated on SOTA ML models.}
-            \resumeItem{Developed a generative QA system with dense passage retrieval (DPR) and retrieval-augmented generation (RAG) techniques using the Haystack framework and PyTorch.}
-            \resumeItem{Worked on a Turkish open-domain QA system made by fine-tuning BERTurk and XLM-Roberta models. Tabularized exact match and F1 scores derived from DeepMind's XQuAD and various Turkish data sets.}
-        \resumeItemListEnd
+\section{Publications \& Presentations}
+\vspace{2pt}
 
-    % \resumeSubheading
-      % {Meteksan Defense Industry Inc.}{Ankara, Turkey}
-      % {Analog Design Engineering Intern}{Jul 2021 \textbf{--} Aug 2021, Internship}
-        % \resumeItemListStart
-            % \resumeItem{Designed and simulated numerous analog circuits such as voltage-mode controlled buck converter, phase-shifted full-bridge isolated DC-DC converter, and EMI filters with LTspice. Integrated these circuits and implemented a 320 W power distribution unit to be used in a radar system's power circuit board.}
-            % \resumeItem{Researched real-world compatible electronic components to be used in such circuits including GaNFETs, high-side gate drivers, and Schottky diodes.}
-            % \resumeItem{Assembled PCBs of both common and differential mode filters and used VNA Bode 100 to measure the cut-off frequencies.}
-        % \resumeItemListEnd
-    
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
 
+\item\small{Vu, D.-T., \textbf{Duong, N. V. B.}, Chén, O. Y., Ha, H., et al. Bridging Kernel and Feature Spaces: A New Approach to Accurate and Interpretable Alzheimer's Disease Assessment. \emph{(In preparation for submission to Journal of Biomedical Informatics)}}
 
+\vspace{-0.75em}
 
-%----------- AWARDS & ACHIEVEMENTS -----------
+\item\small{\textbf{Duong, N. V. B.}, Vu, D.-T., Can, D.-C., Nguyen, H. D., Nguyen, B. T., Chén, O. Y., \& Ha, H. (2025). A Comparison of Machine Learning Methods for Alzheimer's Disease Classification in Vietnamese Patients. Presented at the 14th International Symposium on Information and Communication Technology (SOICT 2025), Vietnam. \emph{(To appear in Communications in Computer and Information Science)}}
 
-\section{Awards \& Achievements}
-  \vspace{2pt}
-  \resumeSubHeadingListStart
-    \small{\item{
-        \textbf{High Honors Degree:}{ Awarded to Bachelor alumni who have graduated with a GPA greater than or equal to 3.50 by Boğaziçi University. (Jul 2023)} \\ \vspace{3pt}
+\vspace{-0.75em}
 
-        \textbf{TÜBİTAK 2247-C Intern Researcher Scholarship:}{ Awarded to students who take part in research projects carried out by the Scientific and Technological Research Council of Turkey (TÜBİTAK). (Dec 2021 \textbf{--} Jun 2022)} \\ \vspace{3pt}
-    
-        % \textbf{National University Admission Exam (YKS):}{ Ranked $75^{th}$ in Mathematics and Science among ca. 2.3 million candidates with a test score of 489.92/500. (Jul 2018)} \\ \vspace{3pt}
-        
-        \textbf{KYK Outstanding Success Scholarship:}{ Awarded to students who have been ranked in the top 100 on National University Admission Exam by Higher Education Credit and Hostels Institution (KYK). (Sep 2018 \textbf{--} Jun 2023)} \\ \vspace{3pt}
-        
-        % \textbf{Boğaziçi University Success Scholarship:}{ Awarded to students who have been ranked in the top 100 on National University Admission Exam by Boğaziçi University. (Sep 2018 \textbf{--} Jun 2023)} \\ \vspace{3pt}
-        
-        \textbf{Kocaeli Science High School Valedictorian Award:}{ Graduated as the highest ranked student. (Jun 2018)}
-    }}
-  \resumeSubHeadingListEnd
+\item\small{\textbf{Duong, N. V. B.}, Ha, H., Ngo, H. P., Vu, D. T., Can, D.-C., Nguyen, H. D., Bui, L. C., Nguyen, B. T., \& Chén, O. Y. (2025). Machine Learning-Based Analysis of Brain Atrophy Patterns in Alzheimer's Disease: A Comparative Study Between ADNI and Vietnamese Cohorts. Poster presented at the International Conference on Korean Dementia Association \& Asia Summit Against Dementia (IC-KDA \& ASAD 2025), Korea.}
 
+\vspace{-0.75em}
 
+\item\small{Nguyen, M., \textbf{Duong, N. V. B.}, Duc, V. T., Phan, C., Phan, T., \& Ha, H. (2025). Unveiling Heterogeneity in Early Alzheimer's Disease: A Data-Driven Exploration of Mild Cognitive Impairment and Normal Cognition. \textit{IFMBE Proceedings}, 408--427. \href{https://doi.org/10.1007/978-3-031-90194-2_29}{https://doi.org/10.1007/978-3-031-90194-2\_29}}
 
-%----------- PROJECTS -----------
+\vspace{-0.75em}
 
-\section{Projects}
-    \vspace{3pt}
-    \resumeSubHeadingListStart
-      
-      \resumeProjectHeading
-        {\textbf{Filters and Fractals} $|$ \emph{\href{https://github.com/arasgungore/filters-and-fractals}{\color{blue}GitHub}}}{}
-          \resumeItemListStart
-            \resumeItem{A C project which implements a variety of image processing operations that manipulate the size, filter, brightness, contrast, saturation, and other properties of PPM images from scratch and recursive fractal generation functions to model popular fractals including Mandelbrot set, Julia set, Koch curve, Barnsley fern, and Sierpinski triangle.}
-          \resumeItemListEnd
-      
-      \resumeProjectHeading
-        {\textbf{Chess Bot} $|$ \emph{\href{https://github.com/arasgungore/chess-bot}{\color{blue}GitHub}}}{}
-          \resumeItemListStart
-            \resumeItem{A C++ project in which you can play chess against an AI with a specified decision tree depth that uses alpha-beta pruning algorithm to predict the optimal move. Aside from basic moves, this mini chess engine also implements chess rules such as castling, en passant, fifty-move rule, threefold repetition, and pawn promotion.}
-          \resumeItemListEnd
-      
-      \resumeProjectHeading
-        {\textbf{DS\&A Projects} $|$ \emph{\href{https://github.com/arasgungore/CMPE250-projects}{\color{blue}GitHub}}}{}
-          \resumeItemListStart
-            \resumeItem{Five Java projects that apply DS\&A concepts such as discrete-event simulation using priority queues, Dijkstra's shortest path algorithm, Prim's algorithm to find the minimum spanning tree, Dinic's algorithm for maximum flow problems, and weighted job scheduling with dynamic programming to real-world problems.}
-          \resumeItemListEnd
-      
-    \resumeSubHeadingListEnd
+\item\small{Lam Nguyen Tung, \textbf{Duong, N. V. B.}, Khoi Nguyen Le, \& Pham Ngoc Hung. (2024). Automated test data generation and stubbing method for C/C++ embedded projects. \textit{Automated Software Engineering}, 31(2). \href{https://doi.org/10.1007/s10515-024-00449-6}{https://doi.org/10.1007/s10515-024-00449-6}}
 
+\resumeSubHeadingListEnd
 
+% %----------- PRESENTATIONS -----------
 
-%----------- RELEVANT COURSEWORK -----------
+% \section{Presentations}
+% \vspace{2pt}
+% \resumeSubHeadingListStart
 
-% \section{Relevant Coursework}
-  % \vspace{2pt}
-  % \resumeSubHeadingListStart
-    % \small{\item{
-        % \textbf{Major coursework:}{ Materials Science, Electrical Circuits I-II, Digital System Design, Numerical Methods, Probability Theory, Electronics I-II, Signals and Systems, Electromagnetic Field Theory, Energy Conversion, System Dynamics and Control, Communication Engineering, Pattern Recognition, Introduction to Digital Signal Processing, Introduction to Digital Communications, Introduction to Database Systems, Introduction to Image Processing, Machine Vision} \\ \vspace{3pt}
-        
-        % \textbf{Minor coursework:}{ Discrete Computational Structures, Introduction to Object-Oriented Programming, Data Structures and Algorithms, Computer Organization, Fundamentals of Software Engineering}
-    % }}
-  % \resumeSubHeadingListEnd
+% \resumeSubheading{Oral Presentation}{}
+% {}{}
+% \vspace{-20pt}
+% \resumeItemListStart
+% \resumeItem{``Unveiling Heterogeneity in Early Alzheimer's Disease: A Data-Driven Exploration of Mild Cognitive Impairment and Normal Cognition.'' at 10th International Conference on the Development of Biomedical Engineering in Vietnam}
+% \resumeItem{``A Comparison of Machine Learning Methods for Alzheimer's Disease Classification in Vietnamese Patients'' at International Symposium on Information and Communication Technology (SOICT 2025).}
+% \resumeItemListEnd
 
+% \resumeSubheading{Poster Presentation}{}
+% {}{}
+% \vspace{-20pt}
+% \resumeItemListStart
+% \resumeItem{``Machine Learning-Based Analysis of Brain Atrophy Patterns in Alzheimer's Disease: A Comparative Study Between ADNI and Vietnamese Cohorts'' at International Conference on Knowledge and Data Acquisition and Applications \& Asia-Pacific Symposium on Affective Science and Alzheimer's Disease (IC-KDA \& ASAD 2025).}
+% \resumeItemListEnd
 
+% \resumeSubHeadingListEnd
 
-%----------- CERTIFICATES -----------
+%----------- AWARDS & HONORS ------------
 
-% \section{Certificates}
-  % \resumeSubHeadingListStart
-    
-    % \resumeOrganizationHeading
-      % {Procter \& Gamble VIA Certificate Program}{Feb 2022}{Project Management and Personal Productivity}
-    
-  % \resumeSubHeadingListEnd
+\section{Awards and Honors}
+\vspace{2pt}
+\small
+\resumeSubHeadingListStart
 
+\resumeSubheadingSingle
+{IC-KDA Asian Society Against Dementia Conference Travel Grant, Korea}{May 2025}
 
+\resumeSubheadingSingle
+{Vingroup Innovation Foundation Master's Scholarship, Vietnam}{Dec 2023 -- Jan 2026}
 
-%----------- ORGANIZATIONS -----------
+\resumeSubheadingSingle
+{Second prize, The Scientific Research Conference for Undergraduates at VNU-UET, Vietnam}{May 2023}
 
-% \section{Organizations}
-  % \resumeSubHeadingListStart
-    
-    % \resumeOrganizationHeading
-      % {Institute of Electrical and Electronics Engineers (IEEE)}{Feb 2022 -- Present}{Student Member}
-    
-  % \resumeSubHeadingListEnd
+% \resumeSubheadingSingle
+% {Bronze-medal winner in Informatics, The High School for Gifted Students, VNU Olympiad, Vietnam}{2017}
+
+% \resumeSubheadingSingle
+% {Bronze-medal winner in Informatics, Competition for Excellent students of Major High Schools in the Northen Delta and Coastal Areas, Vietnam}{2017}
+
+\resumeSubHeadingListEnd
+\normalsize
+
+% %----------- TEACHING -----------
+
+% \section{Teaching}
+
+% \vspace{2pt}
+% \resumeSubHeadingListStart
+
+% \resumeSubheadingSingle
+% {Advanced Programming (INT2215) $\mid$ Lecturer}{2025 -- Present}
+
+% \resumeSubheadingSingle
+% {Object-Oriented Programming (INT2204) $\mid$ Lecturer}{2025 -- Present}
+
+% \resumeSubheadingSingle
+% {Object-Oriented Programming (INT2204) $\mid$ Lab Instructor}{2023 -- Present}
+
+% \resumeSubheadingSingle
+% {Introduction to Informatics (INT1004 \& INT1376) $\mid$ Lab Instructor}{2023 -- 2025}
+
+% % \hspace{0.75em} Advanced Programming (INT2215): Delivered lectures on C++ memory management and instructed students on the complexity analysis of algorithms and data structures.
+
+% % \hspace{0.75em} Object-Oriented Programming (INT2204): Delivered lectures on Object-Oriented Programming principles and mentored students through practical coding with Java, design patterns, and debugging in lab sessions.
+
+% % \hspace{0.75em} Introduction to Informatics (INT1004 \& INT1376): Facilitated lab sessions regarding the Microsoft Office Suite, ensuring students achieved high proficiency in Word, Excel, and PowerPoint.
 
 
+% \resumeSubHeadingListEnd
 
-%----------- HOBBIES -----------
+%----------- TECHNICAL SKILLS -----------
 
-% \section{Hobbies}
-  % \resumeSubHeadingListStart
-    % \small{\item{Basketball, Swimming, Fitness, Eight-ball, Horology}}
-  % \resumeSubHeadingListEnd
+\section{Technical Skills}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{Neuroimaging \& Signal Processing:} {CAT12, FreeSurfer, CONN} \\ \vspace{1pt}
 
+              \textbf{Machine Learning:} {XGBoost, GAM, scikit-learn} \\ \vspace{1pt}
 
+              \textbf{Software Development:} {Python, JavaScript, C++, Automated Software Testing} \\ \vspace{1pt}
 
-%----------- REFERENCES -----------
+              \textbf{Research Methods:} {Cohort Studies, Cross-dataset Validation} \\ \vspace{1pt}
 
-% \section{References}
-  % \vspace{2pt}
-  % \resumeSubHeadingListStart
-    % \item{References available upon request.}
-  % \resumeSubHeadingListEnd
+              \textbf{Tools:} {Git, Linux, Docker, Jira, LaTeX, Microsoft Office.} \\ \vspace{1pt}
 
+              \textbf{Languages:} {Vietnamese (native), English (IELTS 7.5 and TOELF IBT 106/120), Chinese (beginner)}
+        }}
+\resumeSubHeadingListEnd
 
+%----------- TECHNICAL SKILLS -----------
 
-%-------------------------------------------
+\section{References}
+\vspace{2pt}
+
+\small
+
+\resumeSubHeadingListStart
+
+\item \textbf{\normalsize Assoc. Prof. Pham Ngoc Hung}
+\vspace{-0.5em}
+\item Vice Dean $\mid$ Faculty of Information Technology, University of Engineering and Technology, Vietnam National University
+\vspace{-0.5em}
+\item Email: hungpn@vnu.edu.vn
+
+\item \textbf{\normalsize Assoc. Prof. Huong Ha}
+\vspace{-0.5em}
+\item Chair $\mid$ Department of Tissue Engineering and Regenerative Medicine, School of Biomedical Engineering, International University, Vietnam National University Ho Chi Minh City
+\vspace{-0.5em}
+\item Email: htthuong@hcmiu.edu.vn
+
+\resumeSubHeadingListEnd
+
+\normalsize
+
+% %----------- ACADEMIC ACHIEVEMENTS -----------
+
+% \section{Academic Achievements}
+% \vspace{2pt}
+% \resumeSubHeadingListStart
+% \small{\item{
+%               \textbf{English Proficiency:}\\
+%               IELTS Academic: 7.5/9.0\\
+%               TOEFL iBT: 106/120
+%         }}
+% \resumeSubHeadingListEnd
+
+% %----------- PROJECTS -----------
+
+% \section{Research Projects}
+% \vspace{3pt}
+% \resumeSubHeadingListStart
+
+% \resumeProjectHeading
+% {\textbf{AI-based Alzheimer's Disease Detection System}}{}
+% \resumeItemListStart
+% \resumeItem{Developed an automated system for early diagnosis of Alzheimer's Disease in Vietnamese population using advanced machine learning techniques and neuroimaging data analysis}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{Automated Unit Testing Tool}}{}
+% \resumeItemListStart
+% \resumeItem{Led the development of a proprietary automated unit testing tool for FPT Corporation, implementing concolic testing techniques for C/C++ embedded systems}
+% \resumeItemListEnd
+
+% \resumeSubHeadingListEnd
+
 \end{document}

@@ -1,0 +1,272 @@
+%-------------------------
+% Resume in Latex
+% Author : Aras Gungore
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+  {\Huge \scshape \textbf{Nguyen Vu Binh Duong}} \\ \vspace{3pt}
+  \small
+  \faMobile \hspace{.5pt} \href{tel:84966997401}{+84 966 997 401}
+  $|$
+  \faAt \hspace{.5pt} \href{mailto:nguyenvubinhduong@gmail.com}{nguyenvubinhduong@gmail.com}
+  $|$
+  \faMapMarker \hspace{.5pt} Vietnam
+\end{center}
+
+%----------- EDUCATION -----------
+
+\section{Education}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeEducationHeading
+{VNU University of Engineering and Technology}{Hanoi, Vietnam}
+{B.Sc. in Computer Science;}{2019 \textbf{--} 2023}
+{\textbf{GPA}: 3.60/4.00}{}
+{\parbox{0.5\textwidth}{\textbf{Bachelor's Thesis}: Improving the Performance of Unit Test Case Execution for C/C++ Projects}}{}
+
+\resumeEducationHeading
+{VNU University of Engineering and Technology}{Hanoi, Vietnam}
+{M.Sc. in Software Engineering}{2023 \textbf{--} 2025}
+{\textbf{GPA}: 3.87/4.00}{}
+{\parbox{0.5\textwidth}{\textbf{Master's Thesis}: AI-based Software System for Early Diagnosis and Detection of Alzheimer's Disease in Vietnamese People}}{}
+
+
+\resumeSubHeadingListEnd
+
+%----------- RESEARCH EXPERIENCE -----------
+
+\section{Research Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Faculty of Information Technology, VNU-UET}{Hanoi, Vietnam}
+{Teaching/Research Assistant}{2023 \textbf{--} Present}
+\resumeItemListStart
+\resumeItem{Leading a research group developing a proprietary automated unit testing tool for FPT Corporation}
+\resumeItem{Conducting research on AI applications in diagnosis of Alzheimer's Disease}
+\resumeItem{Teaching undergraduate programming courses and mentoring student research projects}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- PUBLICATIONS -----------
+
+\section{Publications}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{Journal Article:}\\
+              Nguyen Tung, L., Binh Duong, N.V., Le, K.N. et al. "Automated test data generation and stubbing method for C/C++ embedded projects."\textit{Automated Software Engineering} 31, 52 (2024).\\
+              DOI: \href{https://doi.org/10.1007/s10515-024-00449-6}{\color{blue}{10.1007/s10515-024-00449-6}}
+              \vspace{3pt}
+
+              \textbf{Conference Paper:}\\
+              Nguyen, M., Duong, N.V.B., et al. "Unveiling Heterogeneity in Early Alzheimer's Disease: A Data-Driven Exploration of Mild Cognitive Impairment and Normal Cognition." \textit{10th International Conference on the Development of Biomedical Engineering in Vietnam}.\\
+              DOI: $\href{https://doi.org/10.1007/978-3-031-90194-2_29}{\color{blue}{10.1007/978-3-031-90194-2_29}}$
+              \vspace{3pt}
+
+              \textbf{Accepted Conference Paper:}\\
+              Duong, N.V.B., et al. "A Comparison of Machine Learning Methods for Alzheimer's Disease Classification in Vietnamese Patients." \textit{International Symposium on Information and Communication Technology} (SOICT 2025).
+              \vspace{3pt}
+
+              \textbf{Journal Manuscript in Preparation:}\\
+              "Bridging Kernel and Feature Spaces: A New Approach to Accurate and Interpretable Alzheimer's Disease Assessment."
+        }}
+\resumeSubHeadingListEnd
+
+%----------- PRESENTATIONS -----------
+
+\section{Presentations}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{Oral Presentation:}\\
+              "Unveiling Heterogeneity in Early Alzheimer's Disease: A Data-Driven Exploration of Mild Cognitive Impairment and Normal Cognition." at \textit{10th International Conference on the Development of Biomedical Engineering in Vietnam} (BME 2024).
+              \vspace{3pt}
+
+              \textbf{Poster Presentation:}\\
+              "Machine Learning-Based Analysis of Brain Atrophy Patterns in Alzheimer's Disease: A Comparative Study Between ADNI and Vietnamese Cohorts" at \textit{International Conference on Knowledge and Data Acquisition and Applications \& Asia-Pacific Symposium on Affective Science and Alzheimer's Disease} (IC-KDA \& ASAD 2025).
+              \vspace{3pt}
+
+              \textbf{Oral \& Poster Presentation:}\\
+              "A Comparison of Machine Learning Methods for Alzheimer's Disease Classification in Vietnamese Patients" at \textit{International Symposium on Information and Communication Technology} (SOICT 2025).
+        }}
+\resumeSubHeadingListEnd
+
+%----------- TECHNICAL SKILLS -----------
+
+\section{Technical Skills}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{Programming Languages:}{ Python, JavaScript, Typescript } \\ \vspace{3pt}
+
+              \textbf{Research Areas:}{ Machine Learning, Neuroimaging, Software Testing, Concolic Testing} \\ \vspace{3pt}
+
+              \textbf{Tools \& Technologies:}{ Python ML Libraries, Neuroimaging Tools, Test Generation Frameworks} \\ \vspace{3pt}
+        }}
+\resumeSubHeadingListEnd
+
+%----------- ACADEMIC ACHIEVEMENTS -----------
+
+\section{Academic Achievements}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{English Proficiency:}\\
+              IELTS Academic: 7.5/9.0\\
+              TOEFL iBT: 106/120
+        }}
+\resumeSubHeadingListEnd
+
+%----------- PROJECTS -----------
+
+\section{Research Projects}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{AI-based Alzheimer's Disease Detection System}}{}
+\resumeItemListStart
+\resumeItem{Developed an automated system for early diagnosis of Alzheimer's Disease in Vietnamese population using advanced machine learning techniques and neuroimaging data analysis}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Automated Unit Testing Tool}}{}
+\resumeItemListStart
+\resumeItem{Led the development of a proprietary automated unit testing tool for FPT Corporation, implementing concolic testing techniques for C/C++ embedded systems}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}

@@ -1,0 +1,316 @@
+%-------------------------
+% Resume in Latex
+% Author : Aras Gungore (refactored)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+%---------- PACKAGES ----------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+\pdfgentounicode=1  % moved here, logically belongs with packages/preamble setup
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+%---------- PAGE STYLE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%---------- MARGINS ----------
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%---------- SECTION FORMATTING ----------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%---------- SHARED LAYOUT PRIMITIVE ----------
+% All subheading commands are built on this two-column tabular row.
+% #1 left content  #2 right content
+\newcommand{\resumeRow}[2]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    #1 & #2 \\
+  \end{tabular*}\vspace{-7pt}%
+}
+
+%---------- SUBHEADING VARIANTS ----------
+% Single line (bold left, plain right)
+\newcommand{\resumeSubheadingSingle}[2]{%
+  \resumeRow{\textbf{#1}}{#2}%  % was missing \textbf in original — added for consistency
+}
+
+% Two lines (bold+date / italic role+date)
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}%
+}
+
+% Three lines (bold+date / subtitle / italic role+date)
+\newcommand{\resumeSubheadingTriple}[5]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \small #3   &    \\
+    \textit{\small#4} & \textit{\small #5} \\
+  \end{tabular*}\vspace{-7pt}%
+}
+
+% Five lines (bold+date / subtitle / three italic role+date pairs)
+\newcommand{\resumeSubheadingQuad}[9]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \small #3   &    \\
+    \textit{\small#4} & \textit{\small #5} \\
+    \textit{\small#6} & \textit{\small #7} \\
+    \textit{\small#8} & \textit{\small #9} \\
+  \end{tabular*}\vspace{-7pt}%
+}
+
+% Education heading: institution + degree + two bullet items
+% Args: #1 institution  #2 location  #3 degree  #4 dates
+%       #5 GPA label    #6 (unused, kept for arity)
+%       #7 thesis label #8 (unused, kept for arity)
+\newcommand{\resumeEducationHeading}[8]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+  \resumeItemListStart
+    \resumeItem{#5}
+    \resumeItem{#7}
+  \resumeItemListEnd%
+}
+
+% Project heading (small font, no bold)
+\newcommand{\resumeProjectHeading}[2]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+  \end{tabular*}\vspace{-7pt}%
+}
+
+%---------- ITEM COMMANDS ----------
+\newcommand{\resumeItem}[1]{%
+  \item\small{{#1 \vspace{-2pt}}}%
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+%---------- LIST ENVIRONMENTS ----------
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0.15in, label={}]%
+}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%---------- PUBLICATIONS ENVIRONMENT ----------
+% Replaces the bare-text + manual \vspace hacks in the Publications section.
+% Each entry is a normal \item so spacing is consistent and easy to add/remove entries.
+\newenvironment{publist}{%
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=0.5em, topsep=0pt]%
+}{\end{itemize}}
+
+% Convenience macro for a single publication entry
+\newcommand{\pubentry}[1]{\item\small{#1}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%---------- HEADING ----------
+\begin{center}
+  {\Huge \scshape \textbf{Nguyen Vu Binh Duong}} \\ \vspace{3pt}
+  \small
+  \faMobile \hspace{.5pt} \href{tel:84966997401}{+84 966 997 401}
+  $|$
+  \faAt \hspace{.5pt} \href{mailto:nguyenvubinhduong@gmail.com}{nguyenvubinhduong@gmail.com}
+  $|$
+  \faMapMarker \hspace{.5pt} Vietnam
+\end{center}
+
+%---------- EDUCATION ----------
+\section{Education}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeEducationHeading
+{\parbox{0.75\textwidth}{University of Engineering and Technology, Vietnam National University (VNU-UET)}}{Hanoi, Vietnam}
+{M.Sc. in Software Engineering}{2023 \textbf{--} 2025}
+{\textbf{GPA}: 3.87/4.00}{}
+{\parbox{0.8\textwidth}{\textbf{Master's Thesis}: AI-based Software System for Early Diagnosis and Detection of Alzheimer's Disease in Vietnamese People}}{}
+
+\resumeEducationHeading
+{University of Engineering and Technology, Vietnam National University}{Hanoi, Vietnam}
+{B.Sc. in Computer Science}{2019 \textbf{--} 2023}
+{\textbf{GPA}: 3.60/4.00}{}
+{\parbox{0.8\textwidth}{\textbf{Bachelor's Thesis}: Improving the Performance of Unit Test Case Execution for C/C++ Projects}}{}
+
+\resumeSubHeadingListEnd
+
+%---------- RESEARCH EXPERIENCE ----------
+\section{Research Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeSubheadingTriple
+{International University, Vietnam National University Ho Chi Minh City}{HCMC, Vietnam}
+{Brain Health Lab, School of Biomedical Engineering}
+{Researcher}{2024 \textbf{--} Present}
+\resumeItemListStart
+\resumeItem{Alzheimer's Biomarker Cross-border Development (ABCD) Project, Vietnamese-Swiss Joint Research Programme. Supervisor: Assoc. Prof. Huong Ha}
+\begin{itemize}
+  \item Developed a modular machine learning framework, comprising predictor and explainer modules, for Alzheimer's disease (AD) classification using structural MRI data from a Vietnamese cohort (N=113).
+  \item Identified the Generalized Additive Model as the most interpretable and robust approach (78.8\% accuracy, 87.2\% AUC) for the Vietnamese cohort, balancing performance with clinical explainability.
+  \item Conducted a comparative analysis of structural features between the Vietnamese cohort (N=76, from April 30th Hospital) and the ADNI cohort (N=80).
+  \item Showed that cross-dataset validation resulted in an approximate 10\% to 25\% drop in prediction accuracy, highlighting the need for population-specific ML models.
+\end{itemize}
+\resumeItemListEnd
+
+\resumeSubheadingQuad
+{University of Engineering and Technology, Vietnam National University}{Hanoi, Vietnam}
+{Department of Software Engineering, Faculty of Information Technology}
+{Lab Instructor/Research Assistant}{2023 \textbf{--} Present}
+{Undergraduate Research Assistant}{2021 \textbf{--} 2023}
+{}{}
+\vspace{-1.5em}
+\resumeItemListStart
+\resumeItem{AKAUTAUTO: a proprietary software used for C/C++ unit testing with automated unit test generation. Supervisor: Assoc. Prof. Pham Ngoc Hung}
+\begin{itemize}
+  \item Directed the research group and facilitated weekly technical reviews with the joint development team at FPT Software.
+  \item Provided training and technical consultation to group members.
+  \item Researched and implemented an optimized pairwise test case generation and integrated it with the classification tree feature.
+  \item Developed a method to stub functions from built-in or external dependencies.
+\end{itemize}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%---------- PUBLICATIONS ----------
+\section{Publications}
+\vspace{2pt}
+\begin{publist}
+  \pubentry{Duy-Thanh Vu, \textbf{Duong Nguyen Vu Binh}, Oliver Y. Chén, Huong Ha \& et al. \textit{Bridging Kernel and Feature Spaces: A New Approach to Accurate and Interpretable Alzheimer's Disease Assessment.} In preparation.}
+
+  \pubentry{\textbf{Duong Nguyen Vu Binh}, Duy-Thanh Vu, Duy-Cat Can, Hai Dac Nguyen, Binh T. Nguyen, Oliver Y. Chén \& Huong Ha. \textit{A Comparison of Machine Learning Methods for Alzheimer's Disease Classification in Vietnamese Patients.} International Symposium on Information and Communication Technology (SOICT 2025). Accepted.}
+
+  \pubentry{Nguyen, M., \textbf{Duong, N. V. B.}, Duc, V. T., Phan, C., Phan, T., \& Ha, H. (2024, July). \textit{Unveiling Heterogeneity in Early Alzheimer's Disease: A Data-Driven Exploration of Mild Cognitive Impairment and Normal Cognition.} In International Conference on the Development of Biomedical Engineering in Vietnam (pp. 408-427). Cham: Springer Nature Switzerland.}
+
+  \pubentry{Nguyen Tung, L., \textbf{Binh Duong, N. V.}, Le, K. N., \& Hung, P. N. (2024). \textit{Automated test data generation and stubbing method for C/C++ embedded projects.} Automated Software Engineering, 31(2), 52.}
+\end{publist}
+
+%---------- PRESENTATIONS ----------
+\section{Presentations}
+\vspace{2pt}
+\resumeSubHeadingListStart
+
+\resumeSubheading{Oral Presentation}{}{}{}
+\vspace{-20pt}
+\resumeItemListStart
+\resumeItem{``Unveiling Heterogeneity in Early Alzheimer's Disease: A Data-Driven Exploration of Mild Cognitive Impairment and Normal Cognition.'' at 10th International Conference on the Development of Biomedical Engineering in Vietnam}
+\resumeItem{``A Comparison of Machine Learning Methods for Alzheimer's Disease Classification in Vietnamese Patients'' at International Symposium on Information and Communication Technology (SOICT 2025).}
+\resumeItemListEnd
+
+\resumeSubheading{Poster Presentation}{}{}{}
+\vspace{-20pt}
+\resumeItemListStart
+\resumeItem{``Machine Learning-Based Analysis of Brain Atrophy Patterns in Alzheimer's Disease: A Comparative Study Between ADNI and Vietnamese Cohorts'' at International Conference on Knowledge and Data Acquisition and Applications \& Asia-Pacific Symposium on Affective Science and Alzheimer's Disease (IC-KDA \& ASAD 2025).}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%---------- AWARDS & HONORS ----------
+\section{Awards and Honors}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\resumeSubheadingSingle{IC-KDA Asian Society Against Dementia Conference Travel Grant, Korea}{2025}
+\resumeSubheadingSingle{Vingroup Innovation Foundation Master's Scholarship, Vietnam}{2024 -- 2025}
+\resumeSubheadingSingle{Second prize, The Scientific Research Conference for Undergraduates at VNU-UET, Vietnam}{2023}
+\resumeSubHeadingListEnd
+
+%---------- TEACHING ----------
+\section{Teaching}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\resumeSubheadingSingle{Advanced Programming (INT2215) $\mid$ Lecturer}{2025 -- Present}
+\resumeSubheadingSingle{Object-Oriented Programming (INT2204) $\mid$ Lecturer}{2025 -- Present}
+\resumeSubheadingSingle{Object-Oriented Programming (INT2204) $\mid$ Lab Instructor}{2023 -- Present}
+\resumeSubheadingSingle{Introduction to Informatics (INT1004 \& INT1376) $\mid$ Lab Instructor}{2023 -- 2025}
+\resumeSubHeadingListEnd
+
+%---------- TECHNICAL SKILLS ----------
+\section{Technical Skills}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{MRI processing:}{ CAT12, CONN} \\ \vspace{3pt}
+              \textbf{Programming:}{ Python, JavaScript, C++, LaTeX} \\ \vspace{3pt}
+              \textbf{Languages:}{ Vietnamese (native), English (IELTS 7.5 and TOELF IBT 106/120)} \\ \vspace{3pt}
+        }}
+\resumeSubHeadingListEnd
+
+%---------- REFERENCES ----------
+\section{References}
+\vspace{2pt}
+
+\textbf{Assoc. Prof. Pham Ngoc Hung}
+
+\vspace{0.25em}
+Vice Dean $\mid$ Faculty of Information Technology, University of Engineering and Technology, Vietnam National University
+
+\vspace{0.25em}
+Email: hungpn@vnu.edu.vn
+
+\vspace{0.5em}
+
+\textbf{Assoc. Prof. Huong Ha}
+
+\vspace{0.25em}
+Chair $\mid$ Department of Tissue Engineering and Regenerative Medicine, School of Biomedical Engineering, International University, Vietnam National University Ho Chi Minh City
+
+\vspace{0.25em}
+Email: htthuong@hcmiu.edu.vn
+
+\end{document}
